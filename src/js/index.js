@@ -94,6 +94,9 @@ export default class bulmaSteps extends EventEmitter {
     if (this.options.stepClickable) {
       [].forEach.call(this.steps, (step, index) => {
         this._clickEvents.forEach(event => {
+          step.addEventListener("click", (e) => {
+            this.activate_step(index);
+          });
           while(index > this.current_id) {
             this[onStepsNext](event);
           }
