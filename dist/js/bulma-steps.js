@@ -188,6 +188,9 @@ var bulmaSteps = function (_EventEmitter) {
       if (this.options.stepClickable) {
         [].forEach.call(this.steps, function (step, index) {
           _this2._clickEvents.forEach(function (event) {
+            step.addEventListener("click", function (e) {
+              _this2.activate_step(index);
+            });
             while (index > _this2.current_id) {
               _this2[onStepsNext](event);
             }
