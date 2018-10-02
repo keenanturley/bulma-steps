@@ -324,6 +324,9 @@ var bulmaSteps = function (_EventEmitter) {
     value: function activate_step(step_id) {
       this.updateActions(this.steps[step_id]);
 
+      // Scroll to top
+      window.scroll(0, 0);
+
       for (var i = 0; i < this.steps.length; i++) {
         var _step = this.steps[i];
 
